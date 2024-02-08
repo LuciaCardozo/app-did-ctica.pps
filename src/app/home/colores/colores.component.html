@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div style="display: flex; justify-content: center; padding: 0.5rem;">
+      <div style="width: 100%; display: flex; justify-content: start; align-items: center; padding: 0.5rem;">
+        <a routerLink="/home">
+          <img src="../../../assets/chevron_left_200px.png" alt="" width="40px">
+        </a>
+      </div>
+      <ion-fab  vertical="top" horizontal="end" style="position: absolute; top: 10px;">
+        <ion-fab-button style="--background:transparent">
+          <img [src]="shared.banderaActual" alt="" width="45px" [ngClass]="shared.bandera ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+        </ion-fab-button>
+        <ion-fab-list side="start">
+          <ion-fab-button> 
+              <img src="../../../assets/Bandera espana.png" alt="" width="45px" 
+                (click)='this.shared.audioEnEspaniol();shared.bandera = "espana"; shared.banderaActual="assets/Bandera espana.png"'
+                [ngClass]="shared.bandera == 'espana' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+            <img src="../../../assets/bandera inglaterra.png" alt="" width="45px" 
+              (click)="this.shared.audioEnIngles();shared.bandera = 'ingles'; shared.banderaActual='assets/bandera inglaterra.png'"
+              [ngClass]="shared.bandera == 'ingles' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+              <img src="../../../assets/bandera portugal.png" alt="" width="45px" 
+                (click)="this.shared.audioEnPortugues();shared.bandera = 'portugues'; shared.banderaActual='assets/bandera portugal.png'"
+                [ngClass]="shared.bandera == 'portugues' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="display: grid; justify-content: unset; align-items: center; margin-top: 1rem;">
+    <div style="display: flex; justify-content: space-around; align-items: center; height: 16vh">
+      <a>
+        <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+          <img src="../../../assets/colores/rojo-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'rojo')"> 
+        </ion-chip>
+      </a>
+      <a>
+        <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+          <img src="../../../assets/colores/amarillo-01.png" alt="" width="120 px" (click)="seSeleccionoColor(true, 'amarillo')">
+        </ion-chip>
+     </a>
+    </div>
+    <div style="display: flex; justify-content: space-around; align-items: center; height: 16vh">
+      <a>
+        <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+          <img src="../../../assets/colores/azul-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'azul')"> 
+        </ion-chip>
+      </a>
+     <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/verde-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'verde')">
+      </ion-chip>
+     </a>
+   </div>
+   <div style="display: flex; justify-content: space-around; align-items: center; height: 16vh">
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/violeta-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'violeta')">
+      </ion-chip>
+    </a>
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/naranja-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'naranja')">
+      </ion-chip>
+    </a>
+   </div>
+   <div style="display: flex; justify-content: space-around; align-items: center; height: 16vh">
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/marron-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'marron')">
+      </ion-chip>
+    </a>
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/blanco-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'blanco')">
+      </ion-chip>
+   </a>
+  </div>
+  <div style="display: flex; justify-content: space-around; align-items: center; height: 16vh">
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/negro-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'negro')">
+      </ion-chip>
+    </a>
+    <a>
+      <ion-chip style="height: 15vh; width: 90%; background-color: transparent;">
+        <img src="../../../assets/colores/rosa-01.png" alt="" width="120px" (click)="seSeleccionoColor(true, 'rosado')"> 
+      </ion-chip>
+    </a>
+  </div>
+  </div>
+</ion-content>

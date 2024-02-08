@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div style="display: flex; justify-content: center; padding: 0.5rem;">
+      <div style="width: 100%; display: flex; justify-content: start; align-items: center; padding: 0.5rem;">
+        <a routerLink="/home">
+          <img src="../../../assets/chevron_left_200px.png" alt="" width="40px">
+        </a>
+      </div>
+      <ion-fab  vertical="top" horizontal="end" style="position: absolute; top: 10px;">
+        <ion-fab-button style="--background:transparent">
+          <img [src]="shared.banderaActual" alt="" width="45px" [ngClass]="shared.bandera ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+        </ion-fab-button>
+        <ion-fab-list side="start">
+          <ion-fab-button> 
+              <img src="../../../assets/Bandera espana.png" alt="" width="45px" 
+                (click)='this.shared.audioEnEspaniol();shared.bandera = "espana"; shared.banderaActual="assets/Bandera espana.png"'
+                [ngClass]="shared.bandera == 'espana' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+            <img src="../../../assets/bandera inglaterra.png" alt="" width="45px" 
+              (click)="this.shared.audioEnIngles();shared.bandera = 'ingles'; shared.banderaActual='assets/bandera inglaterra.png'"
+              [ngClass]="shared.bandera == 'ingles' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+              <img src="../../../assets/bandera portugal.png" alt="" width="45px" 
+                (click)="this.shared.audioEnPortugues();shared.bandera = 'portugues'; shared.banderaActual='assets/bandera portugal.png'"
+                [ngClass]="shared.bandera == 'portugues' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="display: grid; justify-content: center; align-items: center; margin-top: 1rem;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <a>
+        <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+          <img src="../../../assets/numeros/0.png" alt="" width="90px" (click)="seSeleccionoNumero(true, 'cero')">
+        </ion-chip>
+      </a>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+     <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/1.png" alt="" width="90px" (click)="seSeleccionoNumero(true, 'uno')">
+      </ion-chip>
+     </a>
+     <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/2.png" alt="" width="90px" (click)="seSeleccionoNumero(true, 'dos')">
+      </ion-chip>
+    </a>
+   </div>
+   <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+     <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/3.png" alt="" width="80px" (click)="seSeleccionoNumero(true, 'tres')">
+      </ion-chip>
+     </a>
+     <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/4.png" alt="" width="80px" (click)="seSeleccionoNumero(true, 'cuatro')">
+      </ion-chip>
+    </a>
+    <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/5.png" alt="" width="80px" (click)="seSeleccionoNumero(true, 'cinco')">
+      </ion-chip>
+    </a>
+   </div>
+   <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+    <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/6.png" alt="" width="120px" (click)="seSeleccionoNumero(true, 'seis')">
+      </ion-chip>
+    </a>
+    <a>
+      <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+        <img src="../../../assets/numeros/7.png" alt="" width="120px" (click)="seSeleccionoNumero(true, 'siete')">
+      </ion-chip>
+   </a>
+   <a>
+    <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+      <img src="../../../assets/numeros/8.png" alt="" width="120px" (click)="seSeleccionoNumero(true, 'ocho')">
+    </ion-chip>
+   </a>
+   <a>
+    <ion-chip style="height: 0%; width: 90%; background-color: transparent;">
+      <img src="../../../assets/numeros/9.png" alt="" width="120px" (click)="seSeleccionoNumero(true, 'nueve')">
+    </ion-chip>
+  </a>
+  </div>
+  </div>
+</ion-content>

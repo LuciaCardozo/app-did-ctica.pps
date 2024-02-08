@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div style="display: flex; justify-content: center; padding: 0.5rem;">
+      <div style="width: 100%; display: flex; justify-content: start; align-items: center; padding: 0.5rem;">
+        <a routerLink="/home">
+          <img src="../../../assets/chevron_left_200px.png" alt="" width="40px">
+        </a>
+      </div>
+      <ion-fab  vertical="top" horizontal="end" style="position: absolute; top: 10px;">
+        <ion-fab-button style="--background:transparent">
+          <img [src]="shared.banderaActual" alt="" width="45px" [ngClass]="shared.bandera ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+        </ion-fab-button>
+        <ion-fab-list side="start">
+          <ion-fab-button> 
+              <img src="../../../assets/Bandera espana.png" alt="" width="45px" 
+                (click)='this.shared.audioEnEspaniol();shared.bandera = "espana"; shared.banderaActual="assets/Bandera espana.png"'
+                [ngClass]="shared.bandera == 'espana' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+            <img src="../../../assets/bandera inglaterra.png" alt="" width="45px" 
+              (click)="this.shared.audioEnIngles();shared.bandera = 'ingles'; shared.banderaActual='assets/bandera inglaterra.png'"
+              [ngClass]="shared.bandera == 'ingles' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+          <ion-fab-button>
+              <img src="../../../assets/bandera portugal.png" alt="" width="45px" 
+                (click)="this.shared.audioEnPortugues();shared.bandera = 'portugues'; shared.banderaActual='assets/bandera portugal.png'"
+                [ngClass]="shared.bandera == 'portugues' ? 'banderaSeleccionada' : 'banderaNoSeleccionada'">
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="display: grid; justify-content: center; align-items: center; margin-top: 1rem;">
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 2rem">
+      <a (click)="seSeleccionoAnimal(true, 'gato')">
+        <img src="../../../assets/animales/gato.png" id="1" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='gato' ? 'imgSeleccionada' : 'imgNormal'">
+      </a>
+      <a (click)="seSeleccionoAnimal(true, 'perro')">
+       <img src="../../../assets/animales/perro.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='perro' ? 'imgSeleccionada' : 'imgNormal'">
+     </a>
+     <a (click)="seSeleccionoAnimal(true, 'vaca')">
+       <img src="../../../assets/animales/vaca.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='vaca' ? 'imgSeleccionada' : 'imgNormal'">
+     </a>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+     <a (click)="seSeleccionoAnimal(true, 'toro')">
+       <img src="../../../assets/animales/toro-01.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='toro' ? 'imgSeleccionada' : 'imgNormal'">
+     </a>
+     <a (click)="seSeleccionoAnimal(true, 'chancho')">
+      <img src="../../../assets/animales/chancho-01.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='chancho' ? 'imgSeleccionada' : 'imgNormal'">
+    </a>
+    <a (click)="seSeleccionoAnimal(true, 'conejo')">
+      <img src="../../../assets/animales/conejo.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='conejo' ? 'imgSeleccionada' : 'imgNormal'">
+    </a>
+   </div>
+   <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+     <a (click)="seSeleccionoAnimal(true, 'caballo')">
+       <img src="../../../assets/animales/caballo-01.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='caballo' ? 'imgSeleccionada' : 'imgNormal'">
+     </a>
+     <a (click)="seSeleccionoAnimal(true, 'cebra')">
+      <img src="../../../assets/animales/cebra.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='cebra' ? 'imgSeleccionada' : 'imgNormal'">
+    </a>
+    <a (click)="seSeleccionoAnimal(true, 'jirafa')">
+      <img src="../../../assets/animales/jirafa-01.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='jirafa' ? 'imgSeleccionada' : 'imgNormal'">
+    </a>
+   </div>
+   <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem">
+    <a (click)="seSeleccionoAnimal(true, 'elefante')">
+      <img src="../../../assets/animales/elefante.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='elefante' ? 'imgSeleccionada' : 'imgNormal'">
+    </a>
+    <a (click)="seSeleccionoAnimal(true, 'leon')">
+     <img src="../../../assets/animales/leon.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='leon' ? 'imgSeleccionada' : 'imgNormal'">
+   </a>
+   <a (click)="seSeleccionoAnimal(true, 'hipopotamo')">
+     <img src="../../../assets/animales/hipopotamo-01.png" alt="" width="150px" [ngClass]="seSelecciono && animalSeleccionado=='hipopotamo' ? 'imgSeleccionada' : 'imgNormal'">
+   </a>
+  </div>
+  </div>
+</ion-content>

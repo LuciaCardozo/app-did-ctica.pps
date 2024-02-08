@@ -1,0 +1,7 @@
+{
+  "name": "Tabla didactica de idiomas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
